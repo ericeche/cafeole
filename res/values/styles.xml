@@ -1,0 +1,15 @@
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Light" />
+
+       <!--  Split Screen Button  --> 	
+       	<style name="button_weighted">
+		<item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:background">@drawable/button_gradient</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+	</style>
+    
+</resources>
