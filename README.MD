@@ -253,6 +253,13 @@ Download some menu icons from :
 ![String icon](https://github.com/ericeche/cafeole/blob/master/icons1.png "sliding jar file")
 
 
+Here are the screen shoots:
+
+![Sliding Window](https://github.com/ericeche/cafeole/blob/master/sliding.png "sliding fragment window")
+
+![Sliding window fragment](https://github.com/ericeche/cafeole/blob/master/sliding1.png "sliding fragment window")
+
+
 
 
 
