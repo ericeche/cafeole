@@ -60,26 +60,24 @@
         android:hint="cafe, restaturant" />
 
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingTop="20px"
         android:weightSum="1" >
       
 		    <TextView
-		        android:layout_width="0dp"
-		        android:layout_height="wrap_content"
-		        android:layout_weight="0.5"
-		        android:textColor="#33CC33"
 		        style="@style/HeaderFont"
-		        android:text="Distance (miles):" />
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Distance (miles):"
+		        android:textColor="#33CC33" />
 		
 		    <Spinner
 		        android:id="@+id/radius_search"
-		        android:layout_width="0dp"
-		        android:layout_height="wrap_content"
-		        android:layout_weight="0.5"
-        		android:text="[Select Distance...]" />
+		        android:layout_width="match_parent"
+		        android:layout_height="36dp"
+		        android:text="[Select Distance...]" />
     
      </LinearLayout>
      

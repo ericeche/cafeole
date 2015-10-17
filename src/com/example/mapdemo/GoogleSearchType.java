@@ -5,6 +5,7 @@ package com.example.mapdemo;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -12,6 +13,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -22,9 +25,13 @@ import android.widget.Button;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
 import com.example.mapdemo.GoogleType;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 public class GoogleSearchType extends Activity {
+	
+	private SlidingMenu slidingMenu ;
 
 	 private AutoCompleteTextView autoComplete;
 	 private MultiAutoCompleteTextView multiAutoComplete;
@@ -43,6 +50,9 @@ public class GoogleSearchType extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_googletypes_search);
+		
+		ActionBar actionBar = getActionBar();
+	    
 		
 		searchButton = (Button) findViewById(R.id.search_button);
 		// get the defined string-array 
@@ -75,7 +85,20 @@ public class GoogleSearchType extends Activity {
 		// comma to separate the different colors
 		multiAutoComplete.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
 		
-	
+		slidingMenu = new SlidingMenu(this);
+        slidingMenu.setMode(SlidingMenu.LEFT);
+        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        slidingMenu.setShadowWidthRes(R.dimen.slidingmenu_shadow_width);
+        slidingMenu.setShadowDrawable(R.drawable.slidingmenu_shadow);
+        slidingMenu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+        slidingMenu.setFadeDegree(0.35f);
+        slidingMenu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
+        slidingMenu.setMenu(R.layout.slidingmenu);
+        
+      //  getActionBar().setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+		
+		
     searchButton.setOnClickListener(new OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -124,6 +147,43 @@ public class GoogleSearchType extends Activity {
             }
         );
 }
+
+	// Override the onBackPressed method : if the SlidingMenu is showing, 
+	// it will close else the activity will close :
 	
+	@Override
+    public void onBackPressed() {
+        if ( slidingMenu.isMenuShowing()) {
+            slidingMenu.toggle();
+        }
+        else {
+            super.onBackPressed();
+        }
+    }
+	
+//	Override the onKeyDown method : to show/hide the slidingmenu when the menu key is touched.
+	
+	
+	@Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ( keyCode == KeyEvent.KEYCODE_MENU ) {
+            this.slidingMenu.toggle();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+	
+     // Override the onOptionsItemSelected method : 
+	// to show/hide the SlidingMenu when the home icon of the action bar is touched.
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case android.R.id.home:
+            this.slidingMenu.toggle();
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
+    }
 	
 }

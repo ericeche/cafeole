@@ -1,6 +1,7 @@
 <resources>
 
-    <style name="AppTheme" parent="android:Theme.Light" />
+<style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+</style>
 
        <!--  Split Screen Button  --> 	
        	<style name="button_weighted">
@@ -12,4 +13,9 @@
         <item name="android:gravity">center_vertical|center_horizontal</item>
 	</style>
     
+    <!--  Fragment Sliding Menu Colors  -->
+    <color name="purple_light">#a276eb</color> 
+    <color name="purple_middle">#8658ce</color>
+    <color name="purple_dark">#6a3ab2</color>   	
+       	
 </resources>
