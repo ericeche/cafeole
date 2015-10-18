@@ -44,6 +44,8 @@
         
 ## Sliding Menu Using ECLIPSE
 
+![Sliding Window](https://youtu.be/MyyHXFqUffU "sliding fragment window")
+
 ### 1. Maven library install
 
 Modify your bash_profile for maven and ANDROID_HOME environment variables:
@@ -255,9 +257,14 @@ Download some menu icons from :
 
 Here are the screen shoots:
 
+
+
 ![Sliding Window](https://github.com/ericeche/cafeole/blob/master/sliding.png "sliding fragment window")
 
 ![Sliding window fragment](https://github.com/ericeche/cafeole/blob/master/sliding1.png "sliding fragment window")
+
+
+
 
 
 
