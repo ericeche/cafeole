@@ -44,7 +44,7 @@
         
 ## Sliding Menu Using ECLIPSE
 
-![Sliding Window](https://youtu.be/MyyHXFqUffU "sliding fragment window")
+[![ScreenShot](https://github.com/ericeche/cafeole/blob/master/video.png "sliding fragment window")](https://youtu.be/MyyHXFqUffU)
 
 ### 1. Maven library install
 
